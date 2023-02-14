@@ -1,8 +1,12 @@
+import BookList from "./components/BookList";
 import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <NavBar />
+   <div className="App">
+     <NavBar />
+     <BookList />
+   </div>
   );
 }
 
