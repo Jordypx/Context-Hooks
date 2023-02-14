@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaSun, FaMoon } from 'react-icons/fa';
+
 
 export const ThemeContext = React.createContext(); // create context
 
@@ -13,8 +15,13 @@ function ThemeContextProvider(props) {
         setState({ ...state, isLightTheme: !state.isLightTheme });
       };
 
+      const toggleIcon = () => {
+        return state.isLightTheme ? <FaMoon /> : <FaSun />;
+      };
+      
+
     return (
-        <ThemeContext.Provider value={{ ...state, toggleTheme }}>
+        <ThemeContext.Provider value={{ ...state, toggleTheme, toggleIcon }}>
             {props.children}
         </ThemeContext.Provider>
     );
